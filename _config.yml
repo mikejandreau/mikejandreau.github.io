@@ -1,0 +1,4 @@
+name: Boilerplate
+markdown: kramdown
+highlighter: rouge # or pygments or null
+exclude: ["node_modules", "gulpfile.js", "package.json"]

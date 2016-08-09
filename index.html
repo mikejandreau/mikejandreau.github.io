@@ -1,0 +1,20 @@
+---
+layout: default
+title: Site Title
+---
+
+<div id="home">
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum at, maiores, voluptatum nulla quibusdam accusantium! Dolorem, at, a voluptatem harum id dolores cupiditate ut impedit, minima veniam debitis, eos.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptatum officiis, modi, ratione ducimus qui repellendus natus officia hic provident corporis eligendi nisi dolorem quibusdam commodi doloribus voluptate cum quasi.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis cum recusandae enim ipsa consectetur officiis quia unde, necessitatibus quibusdam, molestias nostrum doloribus nisi quos. Est dolore necessitatibus omnis iste, quod.</p>
+
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
