@@ -55,8 +55,9 @@ gulp.task('scripts', function() {
     return gulp.src(['_scripts/libraries/jquery-2.2.4.js', '_scripts/libraries/run_prettify.js', '_scripts/main.js'])
         .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('js'))
-        .pipe(gulp.dest('_site/js'));
+        .pipe(gulp.dest('_site/js'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('js'));
 });
 
 // Watch scss files for changes & recompile

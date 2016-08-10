@@ -54,11 +54,26 @@ $(document).ready(function() {
     }
   }
 
-  $("#scrollUp").click(function() {
+
+
+
+
+  // add scrollup button for the long pages
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('.scrollup').fadeIn();
+      } else {
+        $('.scrollup').fadeOut();
+      }
+    });
+  });
+
+  $(".scrollup").click(function() {
     $('#pageTop').animate({
-        scrollTop: $("#pageTop").offset().top
-    }, 2000);
-});
+      scrollTop: $("#pageTop").offset().top
+    }, 600);
+  });
 
   function resize() {
     $body.removeClass('has-docked-nav')
