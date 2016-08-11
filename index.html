@@ -5,13 +5,6 @@ title: Home
 
 <div id="home">
 
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
 
 
 
@@ -21,23 +14,34 @@ title: Home
 
 
 
-
-
-
-
-
-
-
-
-
-
-  <div class="section get-help">
+  <div class="section values-alt">
     <div class="container">
-      <h3 class="section-heading">Need help getting started?</h3>
-      <p class="section-description">Skeleton is an amazingly easy place to start with responsive development. If you want to learn more, just visit the documentation!</p>
-      <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
+      <div class="row">
+        <div class="one-third column value">
+          <h2 class="value-multiplier">67%</h2>
+          <h5 class="value-heading">Purchase Increase</h5>
+          <p class="value-description">Percentage of users more likely to purchase on mobile friendly site.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">90%</h2>
+          <h5 class="value-heading">Multi-device Users</h5>
+          <p class="value-description">Most of the world accesses the internet on multiple devices.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">66%</h2>
+          <h5 class="value-heading">Sad Users</h5>
+          <p class="value-description">Percentage of users that are frustrated with page load times.</p>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
+
+
 
   <div class="section categories">
     <div class="container">
@@ -58,8 +62,6 @@ title: Home
 
   <div class="container">
     <section class="header">
-      <h2 class="title">A dead simple, responsive boilerplate.</h2>
-      <a class="button button-primary" href="https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip" onClick="_gaq.push(['_trackEvent', 'skeleton', 'download'])">Download</a>
       <div class="value-props row">
         <div class="four columns value-prop">
           <img class="value-img" src="https://dl.dropboxusercontent.com/u/60183450/feather.svg">
