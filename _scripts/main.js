@@ -35,7 +35,7 @@ $(document).ready(function() {
     $('html, body').stop().animate({
         'scrollTop': $target.offset().top-40
     }, 500, 'swing', function () {
-        window.location.hash = target;
+        // window.location.hash = target;
         $(document).on("scroll", onScroll);
     });
   }
@@ -53,27 +53,16 @@ $(document).ready(function() {
       $('.popover').removeClass('open')
     }
   }
-
-
-
-
-
+  
   // add scrollup button for the long pages
-  $(document).ready(function () {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-        $('.scrollup').fadeIn();
-      } else {
-        $('.scrollup').fadeOut();
-      }
-    });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.scrollup').fadeIn();
+    } else {
+      $('.scrollup').fadeOut();
+    }
   });
 
-  $(".scrollup").click(function() {
-    $('#pageTop').animate({
-      scrollTop: $("#pageTop").offset().top
-    }, 600);
-  });
 
   function resize() {
     $body.removeClass('has-docked-nav')
