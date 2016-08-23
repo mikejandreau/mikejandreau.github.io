@@ -9,117 +9,37 @@
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js" defer></script>
   </head>
-  <body class="site" id="pageTop">
+  <body class="site sideNavBody" id="pageTop">
 
-
-
-      <div class="site-header">
-        <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-        <ul class="nav">
-          <li><a href="/">home</a></li>
-          <li><a href="/about">about</a></li>
-          <li><a href="/contact">contact</a></li>
-        </ul>
-      </div>
-
-
-
-
-  <div class="section values">
-    <div class="container">
-      <div class="row">
-        <div class="six offset-by-three columns">
-          <h4 class="hero-heading">Stop coding non-responsive sites. Let users view sites from anywhere.</h4>
-          <a class="button button-primary" href="#intro">Button Text</a>
-        </div>
+    <div class="hero values-alt">
+      <div class="container">
+        <h1>{{ page.title }}</h1>
       </div>
     </div>
-  </div>
 
-    <div class="navbar-spacer"></div>
+    <div class="navbar-spacer">&nbsp;</div>
     <nav class="navbar">
-      <div class="container">
+      <div class="navbar-inner">
+        <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+        <button class="hamburger">
+          <span>toggle menu</span>
+        </button>
         <ul class="navbar-list">
-          <!-- <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li> -->
-          <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#" data-popover="#codeNavPopover">Code</a>
-            <div id="codeNavPopover" class="popover">
-              <ul class="popover-list">
-                <li class="popover-item">
-                  <a class="popover-link" href="#grid">Grid</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#typography">Typography</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#buttons">Buttons</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#forms">Forms</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#lists">Lists</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#code">Code</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#tables">Tables</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#queries">Queries</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="#utilities">Utilities</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="navbar-item"><a class="navbar-link" href="#examples">Examples</a></li>
-          <!-- <li class="navbar-item">
-            <a class="navbar-link" href="#" data-popover="#moreNavPopover">More</a>
-            <div id="moreNavPopover" class="popover">
-              <ul class="popover-list">
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton">On Github</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#browser-support">Browsers</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#license">License</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#extensions">Extensions</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton/releases">Versions</a>
-                </li>
-                <li class="popover-item">
-                  <a class="popover-link" href="https://github.com/dhg/Skeleton#colophon">Colophon</a>
-                </li>
-              </ul>
-            </div>
-          </li> -->
+          <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-
-
-
-
-
-
-
-      <div class="site-content">
-
+    
+    <div class="site-content">
+      <div class="container">
         {{ content }}
-
       </div>
-      <div class="site-footer">
+    </div>
+
+    <div class="site-footer">
+      <div class="container">
         <div class="contact">
           <p>
           &copy; <script>document.write(new Date().getFullYear())</script> {{ site.name }}
@@ -131,9 +51,9 @@
           </p>
         </div>
       </div>
+    </div>
 
-
-<a class="button scrollup" href="#pageTop">button</a>
+    <a class="scrollup" href="#pageTop">top</a>
 
   </body>
 </html>

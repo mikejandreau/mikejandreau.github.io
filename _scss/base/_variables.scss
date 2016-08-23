@@ -30,3 +30,12 @@ $column-margin: 4% !default; // space between columns
 
 // Misc
 $global-radius: 4px !default;
+
+// Responsive breakpoints
+$width_mobile: 480px;
+$width_phablet: 560px;
+$width_tablet: 768px;
+$width_laptop: 992px;
+$width_desktop: 1200px;
+$width_hdtv: 1600px;
+$hidden_mobile: 559px;

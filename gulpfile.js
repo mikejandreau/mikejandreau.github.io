@@ -52,7 +52,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src(['_scripts/libraries/jquery-2.2.4.js', '_scripts/libraries/run_prettify.js', '_scripts/main.js'])
+    return gulp.src(['_scripts/libraries/jquery-2.2.4.js', '_scripts/main.js'])
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(gulp.dest('_site/js'))
