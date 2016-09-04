@@ -35,13 +35,14 @@ a {
   }
 
   &.social-link {
-    color: $font-color;
+    // color: $font-color;
     display: inline-block;
     font-size: 2em;
+    text-decoration: none;
 
-    &:hover {
-      color: $dark-grey;
-    }
+    // &:hover {
+    //   color: $dark-grey;
+    // }
   }
 }
 
@@ -55,12 +56,29 @@ hr {
   border-top: 1px solid $light-grey;
 }
 
-
-
-.site-content {
-  padding-top: 2.5rem;
-}
-
 .meta {
     color: #aaa;
 }
+
+img {
+  max-width: 100%;
+}
+
+
+
+
+// CSS footer fix
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1 0 auto;
+}
+// end footer fix

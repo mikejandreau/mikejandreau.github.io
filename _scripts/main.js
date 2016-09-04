@@ -17,8 +17,8 @@ $(document).ready(function() {
       }
 
   function init() {
-    $window.on('scroll', onScroll)
-    $window.on('resize', resize)
+    // $window.on('scroll', onScroll)
+    // $window.on('resize', resize)
     $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
   }
@@ -46,20 +46,20 @@ $(document).ready(function() {
     }
   });
 
-  function resize() {
-    $body.removeClass('has-docked-nav')
-    navOffsetTop = $nav.offset().top
-    onScroll()
-  }
+  // function resize() {
+  //   $body.removeClass('has-docked-nav')
+  //   navOffsetTop = $nav.offset().top
+  //   onScroll()
+  // }
 
-  function onScroll() {
-    if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
-      $body.addClass('has-docked-nav')
-    }
-    if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
-      $body.removeClass('has-docked-nav')
-    }
-  }
+  // function onScroll() {
+  //   if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
+  //     $body.addClass('has-docked-nav')
+  //   }
+  //   if(navOffsetTop > $window.scrollTop() && $body.hasClass('has-docked-nav')) {
+  //     $body.removeClass('has-docked-nav')
+  //   }
+  // }
 
   function escapeHtml(string) {
     return String(string).replace(/[&<>"'\/]/g, function (s) {
@@ -75,20 +75,20 @@ $(document).ready(function() {
   }
 
   // footer fixing code
-  function stickFooter() {
-    var footer = $(".site-footer");
-    var pos = footer.position();
-    var height = $(window).height();
-    height = height - pos.top;
-    height = height - footer.outerHeight();
-    if (height > 0) {
-      footer.css({'margin-top': height + 'px'});
-    }
-  }
-  stickFooter();
-  $(window).resize(function () {
-    stickFooter();
-  });
+  // function stickFooter() {
+  //   var footer = $(".site-footer");
+  //   var pos = footer.position();
+  //   var height = $(window).height();
+  //   height = height - pos.top;
+  //   height = height - footer.outerHeight();
+  //   if (height > 0) {
+  //     footer.css({'margin-top': height + 'px'});
+  //   }
+  // }
+  // stickFooter();
+  // $(window).resize(function () {
+  //   stickFooter();
+  // });
 
   // toggle the hamburger open and closed states
   var removeClass = true;
@@ -118,7 +118,7 @@ $(document).ready(function() {
     removeClass = true;
   });
 
-  // disable side nav for laptop and desktop
+  // disable mobile nav for laptop and desktop
   $(window).resize(function() {
     if( $(this).width() > 1000 ) {
       $(".navbar-toggle").removeClass('is-active');
