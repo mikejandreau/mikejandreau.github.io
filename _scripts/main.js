@@ -5,7 +5,6 @@ $(document).ready(function() {
       $nav = $('.navbar'),
       $body = $('body'),
       $window = $(window),
-      // $popoverLink = $('[data-popover]'),
       navOffsetTop = $nav.offset().top,
       $document = $(document),
       entityMap = {
@@ -20,8 +19,6 @@ $(document).ready(function() {
   function init() {
     $window.on('scroll', onScroll)
     $window.on('resize', resize)
-    // $popoverLink.on('click', openPopover)
-    // $document.on('click', closePopover)
     $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
   }
@@ -39,20 +36,6 @@ $(document).ready(function() {
         $document.on("scroll", onScroll);
     });
   }
-
-  // function openPopover(e) {
-  //   e.preventDefault()
-  //   closePopover();
-  //   var popover = $($(this).data('popover'));
-  //   popover.toggleClass('open')
-  //   e.stopImmediatePropagation();
-  // }
-
-  // function closePopover(e) {
-  //   if($('.popover.open').length > 0) {
-  //     $('.popover').removeClass('open')
-  //   }
-  // }
   
   // add scrollup button for the long pages
   $(window).scroll(function () {
@@ -62,7 +45,6 @@ $(document).ready(function() {
       $('.scrollup').fadeOut();
     }
   });
-
 
   function resize() {
     $body.removeClass('has-docked-nav')
@@ -79,18 +61,18 @@ $(document).ready(function() {
     }
   }
 
-  // function escapeHtml(string) {
-  //   return String(string).replace(/[&<>"'\/]/g, function (s) {
-  //     return entityMap[s];
-  //   });
-  // }
+  function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    });
+  }
 
-  // function buildSnippets() {
-  //   $codeSnippets.each(function() {
-  //     var newContent = escapeHtml($(this).html())
-  //     $(this).html(newContent)
-  //   })
-  // }
+  function buildSnippets() {
+    $codeSnippets.each(function() {
+      var newContent = escapeHtml($(this).html())
+      $(this).html(newContent)
+    })
+  }
 
   // footer fixing code
   function stickFooter() {
@@ -107,43 +89,42 @@ $(document).ready(function() {
   $(window).resize(function () {
     stickFooter();
   });
-  
 
+  // toggle the hamburger open and closed states
+  var removeClass = true;
+  $(".navbar-toggle").click(function () {
+    $(".navbar-toggle").toggleClass('is-active');
+    $(".navbar-menu").toggleClass('active-menu');
+    removeClass = false;
+  });
 
+  $(".navbar-menu").click(function() {
+    removeClass = false;
+  });
 
+  $("html").click(function () {
+    if (removeClass) {
+      $(".navbar-toggle").removeClass('is-active');
+      $(".navbar-menu").removeClass('active-menu');
+    }
+    removeClass = true;
+  });
 
+  $(".navbar-link").click(function () {
+    if (removeClass) {
+      $(".navbar-toggle").removeClass('is-active');
+      $(".navbar-menu").removeClass('active-menu');
+    }
+    removeClass = true;
+  });
 
-
-    // toggle the hamburger open and closed states
-    var removeClass = true;
-    $(".hamburger").click(function () {
-      $(".hamburger").toggleClass('is-active');
-      $(".navbar-list, .navbar").toggleClass('active-menu');
-      removeClass = false;
-    });
-
-    $(".navbar-list").click(function() {
-      removeClass = false;
-    });
-
-    $("html").click(function () {
-      if (removeClass) {
-        $(".hamburger").removeClass('is-active');
-        $(".navbar-list, .navbar").removeClass('active-menu');
-      }
-      removeClass = true;
-    });
-
-    // disable side nav for laptop and desktop
-    $(window).resize(function() {
-      if( $(this).width() > 991 ) {
-        $(".hamburger").removeClass('is-active');
-        $(".navbar-list, .navbar").removeClass('active-menu');
-      }
-    });
-
-
-
+  // disable side nav for laptop and desktop
+  $(window).resize(function() {
+    if( $(this).width() > 1000 ) {
+      $(".navbar-toggle").removeClass('is-active');
+      $(".navbar-menu").removeClass('active-menu');
+    }
+  });
 
   init();
 

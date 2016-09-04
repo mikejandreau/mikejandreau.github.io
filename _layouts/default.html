@@ -3,35 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - {{ site.name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js" defer></script>
   </head>
   <body class="site sideNavBody" id="pageTop">
 
+    <div class="hero" style="background-image:url({{ page.hero-image-url }});">
+      <div class="container">
+        &nbsp;
+      </div>
+    </div>
 
     <div class="navbar-spacer">&nbsp;</div>
-    <nav class="navbar">
+    <div class="navbar">
       <div class="navbar-inner">
         <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-        <button class="hamburger">
+        <button class="navbar-toggle">
           <span>toggle menu</span>
         </button>
-        <ul class="navbar-list">
+        <ul class="navbar-menu">
           <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
         </ul>
       </div>
-    </nav>
-    
-    <div class="hero values-alt">
-      <div class="container">
-        <h1>{{ page.title }}</h1>
-      </div>
     </div>
+    
     <div class="site-content">
       <div class="container">
         {{ content }}
@@ -40,20 +40,13 @@
 
     <div class="site-footer">
       <div class="container">
-        <div class="contact">
-          <p>
-          &copy; <script>document.write(new Date().getFullYear())</script> {{ site.name }}
-          </p>
-        </div>
-        <div class="contact">
-          <p>
-          <a href="https://github.com/yourusername">github</a>&nbsp;•&nbsp;<a href="https://twitter.com/yourusername">twitter</a>
-          </p>
+        <div class="row">
+          <div class="twelve column">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> {{ site.name }}<!-- , site design by <a href="http://blueherondigital.com/" target="blank">Blue Heron Digital</a> --></p>
+          </div>
         </div>
       </div>
     </div>
-
     <a class="scrollup" href="#pageTop">top</a>
-
   </body>
 </html>

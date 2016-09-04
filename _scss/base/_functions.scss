@@ -1,17 +1,44 @@
-/*
-* Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/9/2014
-* Sass Version by Seth Coelen https://github.com/whatsnewsaes
-*/
-
+// Grid calculation
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @function grid-column-width($n) {
   @return $column-width * $n - ($column-margin*($total-columns - $n)/$total-columns);
 }
 
 @function grid-offset-length($n) {
   @return grid-column-width($n) + $column-margin;
+}
+
+// Media queries - @include mobile { selector: style; }
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin mobile   { @media (min-width: #{$width_mobile})  { @content; } }
+@mixin phablet  { @media (min-width: #{$width_phablet}) { @content; } }
+@mixin tablet   { @media (min-width: #{$width_tablet})  { @content; } }
+@mixin laptop   { @media (min-width: #{$width_laptop})  { @content; } }
+@mixin desktop  { @media (min-width: #{$width_desktop}) { @content; } }
+@mixin hdtv     { @media (min-width: #{$width_hdtv})    { @content; } }
+@mixin nomobile { @media (max-width: #{$hidden_mobile}) { @content; } }
+
+// Aspect ratio mixin - @include aspectRatio(16, 9);
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin aspectRatio($ratio-or-width, $height: null) {
+	$padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+	&:before { content:''; float: left; padding-bottom: $padding; }
+	&:after  { content:''; display: table; clear: both; } 
+}
+
+// Code syntax so line numbers are not selectable
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin unselectable() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
 }

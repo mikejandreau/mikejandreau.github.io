@@ -10,7 +10,6 @@ var rename      = require('gulp-rename');
 var concat      = require('gulp-concat');
 var cp          = require('child_process');
 
-
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -63,7 +62,7 @@ gulp.task('scripts', function() {
 // Watch scss files for changes & recompile
 // Watch html/md files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
+    gulp.watch('_scss/**/*.scss', ['sass']);
     gulp.watch('_scripts/*.js', ['scripts']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });

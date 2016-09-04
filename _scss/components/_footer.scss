@@ -1,0 +1,24 @@
+// Footer
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+.site-footer {
+    padding: 2.5rem 0;
+    font-size: 80%;
+    color: $navbar-font-color;
+    background-color: $navbar-color;
+    border-top: 1px solid $navbar-border;
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: $navbar-font-color; 
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: lighten($navbar-font-color, 15%); 
+        }
+    }
+}

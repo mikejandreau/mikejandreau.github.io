@@ -3,76 +3,140 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Test Post!</title>
+    <title>Test Post! - Static Boilerplate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js" defer></script>
   </head>
   <body class="site sideNavBody" id="pageTop">
 
+    <div class="hero" style="background-image:url();">
+      <div class="container">
+        &nbsp;
+      </div>
+    </div>
 
     <div class="navbar-spacer">&nbsp;</div>
-    <nav class="navbar">
+    <div class="navbar">
       <div class="navbar-inner">
         <h1 class="title"><a href="/">Static Boilerplate</a></h1>
-        <button class="hamburger">
+        <button class="navbar-toggle">
           <span>toggle menu</span>
         </button>
-        <ul class="navbar-list">
+        <ul class="navbar-menu">
           <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/about">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
           <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
         </ul>
       </div>
-    </nav>
-    
-    <div class="hero values-alt">
-      <div class="container">
-        <h1>Test Post!</h1>
-      </div>
     </div>
+    
     <div class="site-content">
       <div class="container">
         <h2>Test Post!</h2>
-<p class="meta">01 Aug 2016</p>
 
-<div class="post">
-<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory - edit this post and re-build (or run with the <code class="highlighter-rouge">-w</code> switch) to see your changes!
+<div class="blog-post">
+	<p class="summary"><span class="date">August 01, 2016</span></p>
+	<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory - edit this post and re-build (or run with the <code class="highlighter-rouge">-w</code> switch) to see your changes!
 To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
 
 <p>Jekyll also offers powerful support for code snippets:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="c1">// toggle the hamburger open and closed states</span>
+<span class="kd">var</span> <span class="nx">removeClass</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">".navbar-toggle"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">".navbar-toggle"</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'is-active'</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">".navbar-menu"</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'active-menu'</span><span class="p">);</span>
+  <span class="nx">removeClass</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll’s GitHub repo</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td class="code"><pre><span class="c1">// navbar
+</span><span class="nc">.navbar</span><span class="o">,</span>
+<span class="nc">.navbar-spacer</span> <span class="p">{</span>  
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">100</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="nv">$navbar-height</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nv">$navbar-color</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">99</span><span class="p">;</span>
+  <span class="nl">border-top</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$navbar-border</span><span class="p">;</span>
+
+  <span class="k">@include</span> <span class="nd">laptop</span> <span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$navbar-border</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">recursive</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">recursive</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">recursive</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 
 </div>
 
+<div class="PageNavigation">
+  
+    <a class="prev" href="/jekyll/update/2014/04/20/welcome-to-jekyll.html">&laquo; Welcome to Jekyll!</a>
+  
+  
+    <a class="next" href="/jekyll/update/2016/08/08/third-post.html">Third Post! &raquo;</a>
+  
+</div>
       </div>
     </div>
 
     <div class="site-footer">
       <div class="container">
-        <div class="contact">
-          <p>
-          &copy; <script>document.write(new Date().getFullYear())</script> Static Boilerplate
-          </p>
-        </div>
-        <div class="contact">
-          <p>
-          <a href="https://github.com/yourusername">github</a>&nbsp;•&nbsp;<a href="https://twitter.com/yourusername">twitter</a>
-          </p>
+        <div class="row">
+          <div class="twelve column">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Static Boilerplate<!-- , site design by <a href="http://blueherondigital.com/" target="blank">Blue Heron Digital</a> --></p>
+          </div>
         </div>
       </div>
     </div>
-
     <a class="scrollup" href="#pageTop">top</a>
-
   </body>
 </html>
